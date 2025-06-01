@@ -32,22 +32,23 @@ class _HomeScreenState extends State<HomeScreen> {
 
         body:
             _index == 0
-                ? LayoutBuilder(
-                  builder: (context, constraints) {
-                    if (orientation == Orientation.landscape) {
-                      width = mediaQueryData.size.height;
-                    } else {
-                      width = mediaQueryData.size.width;
-                    }
-                    if (width >= 950) {
-                      return LargScreen();
-                    }
-                    if (width >= 600) {
-                      return SmallScreens();
-                    }
-                    return SmallScreens();
-                  },
-                )
+                ? SmallScreens()
+                // ? LayoutBuilder(
+                //   builder: (context, constraints) {
+                //     if (orientation == Orientation.landscape) {
+                //       width = mediaQueryData.size.height;
+                //     } else {
+                //       width = mediaQueryData.size.width;
+                //     }
+                //     if (width >= 950) {
+                //       return LargScreen();
+                //     }
+                //     if (width >= 600) {
+                //       return SmallScreens();
+                //     }
+                //     return SmallScreens();
+                //   },
+                // )
                 : _index == 1
                 ? Wishlist()
                 : _index == 2

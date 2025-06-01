@@ -10,11 +10,6 @@ class LastSearch extends StatefulWidget {
 }
 
 class _LastSearchState extends State<LastSearch> {
-  // final int value;
-  // const StarDisplay({Key key, this.value = 0})
-  //     : assert(value != null),
-  //       super(key: key);
-  // final List<LastSearch> _lastsearch = [];
   final List<LastSearchModel> _lastSearch = [];
   void initState() {
     LastSearchModel search = LastSearchModel(
