@@ -2,6 +2,7 @@ import 'package:e_commare/constants/constants.dart';
 import 'package:e_commare/screens/home/widgets/chat.dart';
 import 'package:e_commare/screens/home/widgets/header.dart';
 import 'package:e_commare/screens/home/widgets/notivication_home.dart';
+import 'package:e_commare/screens/home/widgets/search.dart';
 import 'package:flutter/material.dart';
 
 class MyAppbar extends StatefulWidget {
@@ -22,7 +23,6 @@ class _MyAppbarState extends State<MyAppbar> {
         body: Expanded(
           flex: 1,
           child: Container(
-            // height: height * 0.32,
             child: CustomScrollView(
               slivers: [
                 SliverAppBar(
@@ -34,19 +34,24 @@ class _MyAppbarState extends State<MyAppbar> {
                   expandedHeight: height * 0.35 - 1,
 
                   actions: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      height: height * 0.04,
-                      width: width * 0.7,
-                      decoration: BoxDecoration(
-                        color: white,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      child: Row(
-                        children: [
-                          Icon(Icons.search_outlined, color: lightGray),
-                          Text("  Search Product", style: TextStyle(color: lightGray)),
-                        ],
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Search()));
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        height: height * 0.04,
+                        width: width * 0.7,
+                        decoration: BoxDecoration(
+                          color: white,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(Icons.search_outlined, color: lightGray),
+                            Text("  Search Product", style: TextStyle(color: lightGray)),
+                          ],
+                        ),
                       ),
                     ),
                     IconButton(
@@ -69,16 +74,6 @@ class _MyAppbarState extends State<MyAppbar> {
                         },
                       ),
                     ),
-
-                    // badges.Badge(
-                    //   position: badges.BadgePosition.topEnd(top: 2, end: 5),
-                    //   badgeStyle: badges.BadgeStyle(badgeColor: lightRed,),
-                    //   badgeContent: Text('3', style: TextStyle(fontSize: fontsm)),
-                    //   child: IconButton(
-                    //     icon: Icon(Icons.notifications, color: white),
-                    //     onPressed: () {},
-                    //   ),
-                    // ),
                   ],
                 ),
 

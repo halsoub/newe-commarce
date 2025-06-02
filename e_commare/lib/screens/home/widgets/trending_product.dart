@@ -1,4 +1,5 @@
 import 'package:e_commare/constants/constants.dart';
+import 'package:e_commare/screens/home/widgets/trending_details.dart';
 import 'package:flutter/material.dart';
 
 class TrendingProduct extends StatefulWidget {
@@ -65,52 +66,81 @@ class _TrendingProductState extends State<TrendingProduct> {
                 ),
                 itemCount: _trendingProduct.length,
                 itemBuilder:
-                    (context, index) => Center(
-                      child: Container(
-                        width: width * 0.55,
-                        height: height * 0.09,
-                        padding: EdgeInsets.only(left: 2),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: white,
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              height: height * 0.1,
-                              width: width * 0.13,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: NetworkImage(_trendingProduct[index]["image"]!),
-                                  fit: BoxFit.contain,
+                    (context, index) => InkWell(
+                      onTap: () {
+                        if (index == 0) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Trending(title: "Adidas Shirt"),
+                            ),
+                          );
+                        } else if (index == 1) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Trending(title: "iPhone")),
+                          );
+                        } else if (index == 2) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Trending(title: "MackBook")),
+                          );
+                        } else if (index == 3) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Trending(title: "Gaming Chair"),
+                            ),
+                          );
+                        }
+                      },
+                      child: Center(
+                        child: Container(
+                          width: width * 0.55,
+                          height: height * 0.09,
+                          padding: EdgeInsets.only(left: 2),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: white,
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                height: height * 0.1,
+                                width: width * 0.13,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: NetworkImage(_trendingProduct[index]["image"]!),
+                                    fit: BoxFit.contain,
+                                  ),
                                 ),
                               ),
-                            ),
 
-                            Padding(
-                              padding: const EdgeInsets.only(left: 4.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    _trendingProduct[index]["title"]!,
-                                    overflow: TextOverflow.clip,
-                                    style: TextStyle(
-                                      color: black,
-                                      fontSize: fontsm,
-                                      fontWeight: FontWeight.w500,
+                              Padding(
+                                padding: const EdgeInsets.only(left: 4.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      _trendingProduct[index]["title"]!,
+                                      overflow: TextOverflow.clip,
+                                      style: TextStyle(
+                                        color: black,
+                                        fontSize: fontsm,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    _trendingProduct[index]["rating"]!,
-                                    overflow: TextOverflow.clip,
-                                    style: TextStyle(color: lightGray, fontSize: fontxs),
-                                  ),
-                                ],
+                                    Text(
+                                      _trendingProduct[index]["rating"]!,
+                                      overflow: TextOverflow.clip,
+                                      style: TextStyle(color: lightGray, fontSize: fontxs),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),

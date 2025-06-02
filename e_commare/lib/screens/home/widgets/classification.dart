@@ -1,4 +1,5 @@
 import 'package:e_commare/constants/constants.dart';
+import 'package:e_commare/screens/home/widgets/coupons.dart';
 import 'package:e_commare/screens/home/widgets/sub_category.dart';
 import 'package:flutter/material.dart';
 
@@ -62,21 +63,26 @@ class _ClassificationState extends State<Classification> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Center(
-            child: Container(
-              height: height * 0.06,
-              width: width * 0.9,
-              margin: EdgeInsets.all(5),
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              decoration: BoxDecoration(color: blue, borderRadius: BorderRadius.circular(8)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "There are 10 coupon waiting",
-                    style: TextStyle(color: white, fontWeight: FontWeight.w600, fontSize: fontsm),
-                  ),
-                  Icon(Icons.sell, color: white),
-                ],
+            child: InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Coupon()));
+              },
+              child: Container(
+                height: height * 0.06,
+                width: width * 0.9,
+                margin: EdgeInsets.all(5),
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                decoration: BoxDecoration(color: blue, borderRadius: BorderRadius.circular(8)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "There are 10 coupon waiting",
+                      style: TextStyle(color: white, fontWeight: FontWeight.w600, fontSize: fontsm),
+                    ),
+                    Icon(Icons.sell, color: white),
+                  ],
+                ),
               ),
             ),
           ),

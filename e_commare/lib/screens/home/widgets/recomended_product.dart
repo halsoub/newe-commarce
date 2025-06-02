@@ -139,7 +139,6 @@ class _RecomendedProductState extends State<RecomendedProduct> {
 
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          // margin: EdgeInsets.all(5),
                           child: Column(
                             children: [
                               Container(

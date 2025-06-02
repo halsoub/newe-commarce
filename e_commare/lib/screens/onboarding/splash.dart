@@ -27,6 +27,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: darkWhite,
       body: Center(
         child: Text(
           "E-Commerce",

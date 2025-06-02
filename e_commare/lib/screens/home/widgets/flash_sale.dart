@@ -1,6 +1,7 @@
 import 'package:e_commare/constants/constants.dart';
 import 'package:e_commare/models/flash_sale.dart';
 import 'package:e_commare/screens/home/widgets/product_details.dart';
+import 'package:e_commare/screens/home/widgets/view_all.dart';
 import 'package:flutter/material.dart';
 
 class FlashSale extends StatefulWidget {
@@ -151,20 +152,20 @@ class _FlashSaleState extends State<FlashSale> {
                           ),
                         ),
                       ),
-
-                      // Container(
-                      //   height: height * 0.03,
-                      //   width: width * 0.3,
-                      //   color: blue,
-                      //   child: ListView.separated(
-                      //     itemBuilder: (context, index) => Text("data"),
-                      //     separatorBuilder: (context, index) => Divider(color: black),
-                      //     itemCount: _time.length,
-                      //   ),
-                      // ),
                     ],
                   ),
-                  Text("view all", style: TextStyle(color: green, fontWeight: FontWeight.w700)),
+                  InkWell(
+                    onTap: () {
+                      setState(() {});
+                      Navigator.of(
+                        context,
+                      ).push(MaterialPageRoute(builder: (context) => const ViewAll()));
+                    },
+                    child: Text(
+                      "view all",
+                      style: TextStyle(color: green, fontWeight: FontWeight.w700),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -178,7 +179,6 @@ class _FlashSaleState extends State<FlashSale> {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemBuilder:
-                    // final fla;
                     (context, index) => Column(
                       children: [
                         InkWell(

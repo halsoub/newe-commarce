@@ -1,5 +1,6 @@
 import 'package:e_commare/constants/constants.dart';
 import 'package:e_commare/models/recomended.dart';
+import 'package:e_commare/screens/home/widgets/chat.dart';
 import 'package:flutter/material.dart';
 import 'package:e_commare/screens/home/widgets/recomended_product.dart';
 
@@ -140,9 +141,9 @@ class _WishlistState extends State<Wishlist> {
         backgroundColor: white,
         actions: [
           InkWell(
-            // onTap: () {
-            //   Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Chat()));
-            // },
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Chat()));
+            },
             child: Icon(Icons.email, color: gray, size: fontlg),
           ),
           Badge(

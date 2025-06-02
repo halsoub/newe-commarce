@@ -6,8 +6,8 @@ import 'package:e_commare/screens/home/widgets/flash_sale.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetails extends StatefulWidget {
-  final FlashHome flashProduct;
   ProductDetails({super.key, required this.flashProduct});
+  final FlashHome flashProduct;
 
   @override
   State<ProductDetails> createState() => _ProductDetailsState();

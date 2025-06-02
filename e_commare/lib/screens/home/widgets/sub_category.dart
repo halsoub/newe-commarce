@@ -1,6 +1,7 @@
 import 'package:e_commare/constants/constants.dart';
 import 'package:e_commare/models/flash_sale.dart';
 import 'package:e_commare/models/last_search.dart';
+import 'package:e_commare/screens/home/widgets/search.dart';
 import 'package:flutter/material.dart';
 
 class Fashion extends StatefulWidget {
@@ -151,15 +152,17 @@ class _FashionState extends State<Fashion> {
       appBar: AppBar(
         backgroundColor: white,
         title: Text(widget.title, style: TextStyle(fontSize: fontmd)),
-        // leading: IconButton(
-        //   padding: const EdgeInsets.only(bottom: 5),
-        //   onPressed: () {
-        //     Navigator.of(context).pop();
-        //   },
-        //   icon: const FaIcon(FontAwesomeIcons.arrowLeft),
-        // ),
-        actions: const [
-          Padding(padding: EdgeInsets.all(8.0), child: Icon(Icons.search, color: Colors.black45)),
+
+        actions: [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Search()));
+              },
+              child: Icon(Icons.search, color: Colors.black45),
+            ),
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -174,9 +177,11 @@ class _FashionState extends State<Fashion> {
                 itemCount: _img.length,
                 onPageChanged: _onPageChanged,
                 itemBuilder: (context, index) {
-                  return Container(
-                    width: width,
-                    child: Image.network(_img[index], fit: BoxFit.fill),
+                  return InkWell(
+                    child: Container(
+                      width: width,
+                      child: Image.network(_img[index], fit: BoxFit.fill),
+                    ),
                   );
                 },
               ),

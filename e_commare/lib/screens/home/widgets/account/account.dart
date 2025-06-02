@@ -1,5 +1,6 @@
 import 'package:e_commare/constants/constants.dart';
 import 'package:e_commare/screens/home/widgets/account/about.dart';
+import 'package:e_commare/screens/home/widgets/account/account_info.dart';
 import 'package:e_commare/screens/home/widgets/account/last_seen.dart';
 import 'package:e_commare/screens/home/widgets/account/notificatio_setting.dart';
 import 'package:e_commare/screens/home/widgets/account/order_list.dart';
@@ -73,10 +74,18 @@ class _AccountState extends State<Account> {
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       children: [
-                        const CircleAvatar(
-                          radius: 80,
-                          backgroundImage: NetworkImage(
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXks6ievebAuaEC_UyicyvgcdihmikwctPidykBcpoQci8PZwhH7ijJnz8Uv9BB1cz2e0&usqp=CAU",
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => AccountInfo()),
+                            );
+                          },
+                          child: const CircleAvatar(
+                            radius: 80,
+                            backgroundImage: NetworkImage(
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXks6ievebAuaEC_UyicyvgcdihmikwctPidykBcpoQci8PZwhH7ijJnz8Uv9BB1cz2e0&usqp=CAU",
+                            ),
                           ),
                         ),
                         Padding(
@@ -89,11 +98,11 @@ class _AccountState extends State<Account> {
                                 style: TextStyle(fontWeight: FontWeight.w600),
                               ),
                               InkWell(
-                                // onTap: () {
-                                //   Navigator.of(context).push(
-                                //     MaterialPageRoute(builder: (context) => const AccountInfo()),
-                                //   );
-                                // },
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (context) => const AccountInfo()),
+                                  );
+                                },
                                 child: Row(
                                   children: [
                                     Text("Account Information", style: TextStyle(color: gray)),

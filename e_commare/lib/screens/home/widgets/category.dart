@@ -25,9 +25,17 @@ class _CategoryState extends State<Category> {
               height: height - 10,
               width: width * 0.3,
 
-              child: Image.network(
-                "https://ijtechnology.net/assets/images/api/devkit/apps/ecommerce/category_for_you/1.jpg",
-                fit: BoxFit.fill,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Fashion(title: "Fashion")),
+                  );
+                },
+                child: Image.network(
+                  "https://ijtechnology.net/assets/images/api/devkit/apps/ecommerce/category_for_you/1.jpg",
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
             Column(
@@ -37,17 +45,33 @@ class _CategoryState extends State<Category> {
                     SizedBox(
                       height: height * 0.15,
                       width: width * 0.35,
-                      child: Image.network(
-                        "https://ijtechnology.net/assets/images/api/devkit/apps/ecommerce/category_for_you/2.jpg",
-                        fit: BoxFit.fill,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Fashion(title: "Electronic")),
+                          );
+                        },
+                        child: Image.network(
+                          "https://ijtechnology.net/assets/images/api/devkit/apps/ecommerce/category_for_you/2.jpg",
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                     SizedBox(
                       height: height * 0.15,
                       width: width * 0.35,
-                      child: Image.network(
-                        "https://ijtechnology.net/assets/images/api/devkit/apps/ecommerce/category_for_you/3.jpg",
-                        fit: BoxFit.fill,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Fashion(title: "Sport")),
+                          );
+                        },
+                        child: Image.network(
+                          "https://ijtechnology.net/assets/images/api/devkit/apps/ecommerce/category_for_you/3.jpg",
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ],
@@ -57,17 +81,35 @@ class _CategoryState extends State<Category> {
                     SizedBox(
                       height: height * 0.15,
                       width: width * 0.35,
-                      child: Image.network(
-                        "https://ijtechnology.net/assets/images/api/devkit/apps/ecommerce/category_for_you/4.jpg",
-                        fit: BoxFit.fill,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Fashion(title: "Smart&Tablets"),
+                            ),
+                          );
+                        },
+                        child: Image.network(
+                          "https://ijtechnology.net/assets/images/api/devkit/apps/ecommerce/category_for_you/4.jpg",
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                     SizedBox(
                       height: height * 0.15,
                       width: width * 0.35,
-                      child: Image.network(
-                        "https://ijtechnology.net/assets/images/api/devkit/apps/ecommerce/category_for_you/5.jpg",
-                        fit: BoxFit.fill,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Fashion(title: "Health&Cear")),
+                          );
+                        },
+                        child: Image.network(
+                          "https://ijtechnology.net/assets/images/api/devkit/apps/ecommerce/category_for_you/5.jpg",
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ],
